@@ -38,6 +38,7 @@ function HomeScreen() {
           navigation.navigate("signIn");
         }}
       >
+        fdafafafadsf
         {JSON.stringify(loginInfo)}
       </Text>
     </View>
@@ -47,6 +48,7 @@ function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 20,
   },
   logo: {
     width: scaleSize(200),
