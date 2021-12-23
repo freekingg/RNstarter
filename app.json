@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "RNstarter",
+    "slug": "RNstarter",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "RNstarter"
+}
