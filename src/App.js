@@ -11,7 +11,7 @@ export default function App() {
   return (
     <StoreProvider store={Store}>
       <NativeBaseProvider style={styles.container}>
-        <StatusBar style="auto" />
+        <StatusBar style="dark-content" />
         <Router />
       </NativeBaseProvider>
     </StoreProvider>

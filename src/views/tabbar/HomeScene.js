@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { useSelector, useDispatch } from "react-redux";
+import { Box, Center } from "native-base";
 import { SET_USER_INFO } from "../../store/action/Actions";
 import { getUserInfo } from "../../api/user";
 import { scaleSize } from "../../public/ScreenUtil";
@@ -32,23 +33,27 @@ function HomeScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text
-        onPress={() => {
-          navigation.navigate("signIn");
+    <Center flex={1} px="3">
+      <Box
+        width="90%"
+        bg="primary.500"
+        p="4"
+        shadow={2}
+        _text={{
+          fontSize: "md",
+          fontWeight: "bold",
+          color: "white",
         }}
       >
-        fdafafafadsf
-        {JSON.stringify(loginInfo)}
-      </Text>
-    </View>
+        This is a Home
+      </Box>
+    </Center>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20,
   },
   logo: {
     width: scaleSize(200),
