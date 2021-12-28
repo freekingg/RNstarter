@@ -19,10 +19,7 @@ const service = axios.create({
 //请求拦截
 service.interceptors.request.use(
   async function (config) {
-    console.log(store);
-
     let token = null;
-    let version = '3.0.0';
     try {
       token = await Storage.getItem('token');
     } catch (error) {
@@ -30,7 +27,6 @@ service.interceptors.request.use(
     }
 
     config.headers.token = token;
-    config.headers.version = version;
     if (config.method === 'post' || config.method === 'put') {
       config.data = {
         ...config.data,
@@ -60,7 +56,6 @@ service.interceptors.response.use(
      * 410 网站维护
      * 403 访问受限
      */
-    console.log('响应res', response);
     if (response.data.code === 0) {
       return response.data.data;
     } else if (response.data.code === 10020 || response.data.code === 10021) {
@@ -73,10 +68,6 @@ service.interceptors.response.use(
           index: 1,
           routes: [
             {name: 'signIn'},
-            {
-              name: 'Profile',
-              params: {user: 'jane'},
-            },
           ],
         }),
       );
