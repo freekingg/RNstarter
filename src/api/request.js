@@ -1,11 +1,13 @@
 import axios from 'axios';
-import {baseURL} from '../../app.json';
+import Config from '../config';
 import {Alert, Linking} from 'react-native';
 import {CommonActions} from '@react-navigation/native';
 import Storage from '../public/Storage';
 import store from '../store';
 import {SET_LOGIND} from '../store/action/Actions';
 import qs from 'qs';
+
+let baseURL = Config.baseURL
 
 // axios 实例
 const service = axios.create({

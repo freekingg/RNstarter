@@ -1,12 +1,33 @@
 {
   "expo": {
-    "name": "RNstarter",
-    "slug": "RNstarter",
+    "name": "rnstar",
+    "slug": "rnstar",
     "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
     "assetBundlePatterns": [
       "**/*"
-    ]
-  },
-  "name": "RNstarter",
-  "baseURL": "http://okex-backendadmin-test.v255mg.com/okex-admin/"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "rnstart.king.com"
+    },
+    "web": {
+      "favicon": "./src/assets/favicon.png"
+    }
+  }
 }

@@ -9,6 +9,8 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { FontAwesome } from '@expo/vector-icons';
+
 // views
 import HomeScene from '../views/tabbar/HomeScene';
 import TradeScene from '../views/tabbar/TradeScene';
@@ -33,7 +35,7 @@ function BottomTabs() {
         component={HomeScene}
         options={{
           tabBarLabel: '首页',
-          tabBarIcon: ({focused, color, size}) => <Icon name="location-arrow" size={30} color={color} />,
+          tabBarIcon: ({focused, color, size}) => <FontAwesome name="location-arrow" size={30} color={color} />,
           tabBarColor: '#C9E7F8',
         }}
       />
@@ -42,7 +44,7 @@ function BottomTabs() {
         component={TradeScene}
         options={{
           tabBarLabel: '交易',
-          tabBarIcon: ({focused, color, size}) => <Icon name="location-arrow" size={26} color={color} />,
+          tabBarIcon: ({focused, color, size}) => <FontAwesome name="bell" size={26} color={color} />,
           tabBarColor: '#9FD5C9',
         }}
       />
@@ -51,7 +53,7 @@ function BottomTabs() {
         component={OrderScene}
         options={{
           tabBarLabel: '订单',
-          tabBarIcon: ({focused, color, size}) => <Icon name="book" size={26} color={color} />,
+          tabBarIcon: ({focused, color, size}) => <FontAwesome name="book" size={26} color={color} />,
           tabBarColor: '#F7EAA2',
         }}
       />
@@ -60,7 +62,7 @@ function BottomTabs() {
         component={MineScene}
         options={{
           tabBarLabel: '我的',
-          tabBarIcon: ({focused, color, size}) => <Icon name="user" size={26} color={color} />,
+          tabBarIcon: ({focused, color, size}) => <FontAwesome name="user" size={26} color={color} />,
           tabBarColor: '#FAD4D6',
         }}
       />

@@ -18,8 +18,7 @@ import {
   Stack,
   Box,
 } from "native-base";
-import AntDesign from "react-native-vector-icons/AntDesign";
-import Entypo from "react-native-vector-icons/Entypo";
+import { AntDesign,Entypo } from '@expo/vector-icons';
 
 import IconGoogle from "./components/IconGoogle";
 import IconFacebook from "./components/IconFacebook";
