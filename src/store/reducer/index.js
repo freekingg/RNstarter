@@ -8,8 +8,8 @@ const Reducer = (state = initialState, action) => {
   let {payload} = action;
   switch (action.type) {
     case Types.SET_LOGIN_INFO:
-      Storage.setItem({key: 'socketDomain', data: payload.socketDomain});
-      Storage.setItem({key: 'token', data: payload.token});
+      Storage.setItem('socketDomain', payload.socketDomain);
+      Storage.setItem('token',payload.token);
 
       return Object.assign({}, newState, {
         login_info: payload,
@@ -20,7 +20,7 @@ const Reducer = (state = initialState, action) => {
       });
     case Types.SET_LOGIND:
       if (!payload) {
-        Storage.removeItem({key: 'token'});
+        Storage.removeItem('token');
       }
       return Object.assign({}, newState, {
         is_login: payload,

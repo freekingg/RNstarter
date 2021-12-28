@@ -24,7 +24,7 @@ service.interceptors.request.use(
     let token = null;
     let version = '3.0.0';
     try {
-      token = await Storage.getItem({key: 'token'});
+      token = await Storage.getItem('token');
     } catch (error) {
       token = '';
     }
