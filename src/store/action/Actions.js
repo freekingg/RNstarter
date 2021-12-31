@@ -1,4 +1,4 @@
-import * as Types from './Types';
+import * as Types from '../types';
 
 // 设置登陆后信息 token domain
 export const SET_LOGIN_INFO = payload => {

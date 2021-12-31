@@ -7,8 +7,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
-
 import { FontAwesome } from '@expo/vector-icons';
 
 // views
@@ -108,13 +106,22 @@ const AppNavigator = () => {
 
   const auth = async () => {
     try {
-      await global.storage.load({key: 'token'});
-      dispatch(SET_LOGIND(true));
+      let t = await Storage.getItem("token");
+      if(t){
+        dispatch(SET_LOGIND(true));
+      }else{
+        dispatch(SET_LOGIND(false));
+        navigationRef.current.dispatch(
+          StackActions.replace('signIn')
+        );
+      }
       dispatch(SET_TOP_NAV(navigationRef.current));
     } catch (error) {
       dispatch(SET_LOGIND(false));
       dispatch(SET_TOP_NAV(navigationRef.current));
-      // navigationRef.current.navigate('signIn');
+      navigationRef.current.dispatch(
+        StackActions.replace('signIn')
+      );
     }
   };
 
